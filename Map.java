@@ -30,9 +30,9 @@ public class Map
         for(int yDraw = (Player.y - Player.vertViewDistance) - 1; yDraw < Player.y + Player.vertViewDistance; yDraw++) {
             for(int xDraw = (Player.x - Player.horizViewDistance) - 1; xDraw < Player.x + Player.horizViewDistance; xDraw++) {
                 if(yDraw >= mapHeight || yDraw < 0 || xDraw >= mapWidth || xDraw < 0) {
-                    System.out.print("\u001B[31m" + "X" + "\u001B[0m");
+                    System.out.print("" + "X" + "");
                 } else if (xDraw + 1 == Player.x && yDraw + 1 == Player.y) {
-                    System.out.print("\u001B[33m" + "Y" + "\u001B[0m");
+                    System.out.print("" + "Y" + "");
                 } else {
                     System.out.print("" + fullMap[yDraw][xDraw] + "");
                 }

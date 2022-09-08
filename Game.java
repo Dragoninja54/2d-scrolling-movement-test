@@ -1,3 +1,6 @@
+import java.util.*;
+import java.util.Scanner;
+
 public class Game
 {
     public static Scanner getInput = new Scanner(System.in);
@@ -22,10 +25,12 @@ public class Game
         String input = getInput.nextLine();
         //  check the input
         if ("s".equals(input.toLowerCase()) || "start".equals(input.toLowerCase())) {
-            System.out.print("\033[H\033[2J");
+        	System.out.println("");
+        	System.out.println("");
             map.printMap(0);
         } else {
-            System.out.print("\033[H\033[2J");
+            System.out.println("");
+            System.out.println("");
             System.out.println("Unavailable Input, Try Again");
             start();
         }
@@ -39,51 +44,62 @@ public class Game
         String input = getInput.nextLine();
         if ("u".equals(input.toLowerCase()) || "up".equals(input.toLowerCase())) {
             if (checkPosAvailable(1, 1)) {
-                System.out.print("\033[H\033[2J");
+            	System.out.println("");
+            	System.out.println("");
                 Player.y--;
                 map.printMap(0);
             } else {
-                System.out.print("\033[H\033[2J");
+            	System.out.println("");
+            	System.out.println("");
                 map.printMap(1);
             }
         } else if ("d".equals(input.toLowerCase()) || "down".equals(input.toLowerCase())) {
             if (checkPosAvailable(1, 3)) {
-                System.out.print("\033[H\033[2J");
+            	System.out.println("");
+            	System.out.println("");
                 Player.y++;
                 map.printMap(0);
             } else { 
-                System.out.print("\033[H\033[2J");
+            	System.out.println("");
+            	System.out.println("");
                 map.printMap(1);
             }
         } else if ("l".equals(input.toLowerCase()) || "left".equals(input.toLowerCase())) {
             if (checkPosAvailable(1, 4)) {
-                System.out.print("\033[H\033[2J");
+            	System.out.println("");
+            	System.out.println("");
                 Player.x--;
                 map.printMap(0);
             } else { 
-                System.out.print("\033[H\033[2J");
+            	System.out.println("");
+            	System.out.println("");
                 map.printMap(1);
             }
         } else if ("r".equals(input.toLowerCase()) || "right".equals(input.toLowerCase())) {
             if (checkPosAvailable(1, 2)) {
-                System.out.print("\033[H\033[2J");
+            	System.out.println("");
+            	System.out.println("");
                 Player.x++;
                 map.printMap(0);
             } else { 
-                System.out.print("\033[H\033[2J");
+            	System.out.println("");
+            	System.out.println("");
                 map.printMap(1);
             }
         } else if ("o".equals(input.toLowerCase()) || "options".equals(input.toLowerCase())) {
-            System.out.print("\033[H\033[2J");
+        	System.out.println("");
+        	System.out.println("");
             System.out.println();
             System.out.println("u - up | d - down | l - left | r - right | o - more options");
             map.printMap(0);
         } else if ("i".equals(input.toLowerCase()) || "information".equals(input.toLowerCase())) {
-            System.out.print("\033[H\033[2J");
-            tileMap.get(map.fullMap[Player.y][Player.x]).printInfo();
+        	System.out.println("");
+        	System.out.println("");
+            tileMap.get(map.fullMap[Player.y - 1][Player.x - 1]).printInfo();
             map.printMap(0);
         } else {
-            System.out.print("\033[H\033[2J");
+        	System.out.println("");
+        	System.out.println("");
             map.printMap(2);
         }
     }
