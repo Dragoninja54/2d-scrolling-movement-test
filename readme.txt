@@ -1,0 +1,1 @@
+Run game.java to start, "game" is fully in console
